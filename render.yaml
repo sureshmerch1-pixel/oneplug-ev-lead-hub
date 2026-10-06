@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: oneplug-ev-lead-hub
+    runtime: docker
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: SYNC_MINUTES
+        value: "30"
+    healthCheckPath: /health
